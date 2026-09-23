@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.21.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ml-benchmark-toolkit"
+version = "0.1.0"
+description = "Lightweight toolkit to benchmark, compare and visually report on classification models."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+keywords = ["machine-learning", "benchmarking", "classification", "reporting", "scikit-learn"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.1",
+    "matplotlib>=3.6",
+    "seaborn>=0.12",
+    "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "build>=1.0",
+    "twine>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourorg/ml-benchmark-toolkit"
+Issues = "https://github.com/yourorg/ml-benchmark-toolkit/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mlbenchmark"]
+
+[tool.hatch.version]
+path = "src/mlbenchmark/__init__.py"
+pattern = "__version__ = ['\"](?P<version>[^'\"]+)['\"]"
